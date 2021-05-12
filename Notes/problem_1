@@ -13,3 +13,54 @@ and how they can help in my future programming endeavors
 
 As I have learned recently, the fastest way to solve an iterative problem is to know the solution
 I shall sleep on this and come back later to this problem
+
+
+-----------------------------------------------------------------------------
+
+Back to this, here's is my attempt at making a math based solution,
+though I did look at the pdf, I hope to develop te intuition necessary to one day be able to solve these
+without looking at the pdf or being pointed in the right direction
+
+This can be broken down to the sum of all multiple of 3 plus the sum of all multiple of 5 minus the sum of all multiples of 15
+(as 3 x 5 = 15 , multiples of 15 are also multiples of 3 and 5 and will have been counted twice)
+
+Since finding the sum of all multiples of a number is the same equation no matter the number, I will demonstrate with 3
+
+First we find how many multiples we will need to add, in our case, all the ones under 1000. We find that the larges multiple of 3 under 1000
+is 999. 999 / 3 is 333.333... rounded down to 333. This is the amount of multiples under 1000
+
+The multiples of 3 is an arithmeic progression with a difference of 3. The nth term of an arithmetic progression can be found with the following:
+
+Xn = Xi + Mn where Xi is the first number of the progression, M is the common difference and n is the termn number\
+
+In our case:
+Xi = 3
+M = 3
+n = 333
+Xn = 999
+
+It follows that the sum of all these numbers can be expressed as :
+
+S = Xi + (Xi + M) + (Xi + 2M) + ... (Xi + (n - 1)M)
+
+or
+
+S = Xn + (Xn - (n - 1)M) + (Xn - (n - 2)M) + ... (Xn - (n ))
+
+Let's translate this to real numbers  and cap this at 12, or 4 iterations:
+
+S = 3 + (3 + 3) + (3 + 6) + (3 + 9)
+S = 12 + (12 - 3) + (12 - 6) + (12 - 9)
+
+As it is now apparent, some terms here cancel if we add these two equations leaving us with:
+
+2S = 3 + 12 + 3 + 3 + 3 + 12 + 12 + 12 + 12
+
+We can see that we end up with 4 3s and 4 12s, 4 being the maximum n, we can conver this to:
+
+2S = 3n + 12n
+S = (3n + 12n) / 2 or S = (3 + 12)n / 2
+
+S = (Si + Sn)n / 2
+
+Then we apply this formula to 3, 5 and 15, and we get our result
