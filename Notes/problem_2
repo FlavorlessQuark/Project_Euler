@@ -1,0 +1,18 @@
+This problem can also be solved using the naive method of checking for even numbers
+
+While I didn't find an entirely mathematical way of doing this, I was able to get rid of the even checking
+First I wrote the fibonnaci sequence, as many nummbers are could fit on my board, then I underlined all even numbers
+and wrote them out on a separate line.
+I then tried to find some kind of formula that would link them to each other, I first tried with 8 and 34 and 2 and 8
+Since 8 is 2 *4 I had the intuition that whatever equation linked all these numbers had to have some multiplication by 4
+Multiplying 8 by 4 we get 32, if we add 2, we get the next number: 34.
+
+In this way one can see that all even fibonnaci numbers follow this rule n = 4 * (n -1) +  (n-2)
+We also pretend that the number before 2 is 0 so that 8 = 4 * 2 + 0
+
+Looking at the pdf, the provided solution is the same I found, though they prove it in some way that I do not quite
+understand..
+The forum also had some interesting solutions involving the golden ratio
+
+
+There is more reading to be done, this time on linear difference equations
